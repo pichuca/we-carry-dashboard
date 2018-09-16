@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -25,6 +26,8 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 
+
+// Menu config.
 const navItemsConfig = {
     inventory: 'Inventario',
     orders: 'Pedidos',
@@ -34,38 +37,48 @@ const navItemsConfig = {
 };
 
 const mainListItems = (
-  <div>
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary={navItemsConfig.inventory} />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary={navItemsConfig.orders} />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary={navItemsConfig.entries} />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary={navItemsConfig.reports} />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary={navItemsConfig.configurations} />
-    </ListItem>
-  </div>
+    <div className="menu-buttons">
+      <Link to="/inventory">
+        <ListItem button>
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary={navItemsConfig.inventory} />
+        </ListItem>
+      </Link>
+      <Link to="/orders">
+        <ListItem button>
+          <ListItemIcon>
+            <ShoppingCartIcon />
+          </ListItemIcon>
+          <ListItemText primary={navItemsConfig.orders} />
+        </ListItem>
+      </Link>
+      <Link to="/entries">
+        <ListItem button>
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
+          <ListItemText primary={navItemsConfig.entries} />
+        </ListItem>
+      </Link>
+      <Link to="/reports">
+        <ListItem button>
+          <ListItemIcon>
+            <BarChartIcon />
+          </ListItemIcon>
+          <ListItemText primary={navItemsConfig.reports} />
+        </ListItem>
+      </Link>
+      <Link to="/configurations">
+        <ListItem button>
+          <ListItemIcon>
+            <LayersIcon />
+          </ListItemIcon>
+          <ListItemText primary={navItemsConfig.configurations} />
+        </ListItem>
+      </Link>
+    </div>
 );
 
 
