@@ -12,7 +12,7 @@ class Inventory extends React.Component {
     </div>);
     const config = {
       className: 'ui-inventory',
-      name: 'Inventorio',
+      name: 'Inventario',
       content: itemList,
     };
     return (
