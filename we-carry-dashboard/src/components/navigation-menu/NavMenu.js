@@ -16,6 +16,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
+// Router
+import { Route } from "react-router-dom";  
+// Sections components
+import Inventory from '../../components/sections/inventory/Inventory';
+import Orders from '../../components/sections/orders/Orders';
+import Entries from '../../components/sections/entries/Entries';
+import Reports from '../../components/sections/reports/Reports';
+import Configurations from '../../components/sections/configurations/Configurations';
+
 // list items dependencies.
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -25,6 +34,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
+
+import './NavMenu.css';
 
 
 // Menu config.
@@ -223,8 +234,13 @@ class NavMenu extends React.Component {
             <List>{mainListItems}</List>
             <Divider />
           </Drawer>
-          <main className={classes.content}>
+          <main className={`${classes.content} sections`}>
             {/* Sections goes here. */}
+            <Route exact path="/inventory" component={Inventory} />
+            <Route path="/orders" component={Orders} />
+            <Route path="/entries" component={Entries} />
+            <Route path="/reports" component={Reports} />
+            <Route path="/configurations" component={Configurations} />
           </main>
         </div>
       </React.Fragment>
