@@ -194,7 +194,7 @@ class NavMenu extends React.Component {
         <div className={classes.root}>
           <AppBar
             position="absolute"
-            className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+            className={`${classNames(classes.appBar, this.state.open && classes.appBarShift)} app-header`}
           >
             <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
               <IconButton

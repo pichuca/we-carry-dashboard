@@ -1,11 +1,22 @@
 import React from 'react';
+import Section from '../../commons/section/Section';
+
+import './Inventory.css';
 
 class Inventory extends React.Component {
   render() {
+    const itemList = (<div className="ui-inventory-items-list">
+      <ul>
+        <li>Item</li>
+      </ul>
+    </div>);
+    const config = {
+      className: 'ui-inventory',
+      name: 'Inventorio',
+      content: itemList,
+    };
     return (
-      <div className="inventory">
-        <h1>Inventory</h1>
-      </div>
+      <Section {...config} />
     );
   }
 }
