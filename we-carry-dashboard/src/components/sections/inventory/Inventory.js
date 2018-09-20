@@ -6,21 +6,22 @@ import './Inventory.css';
 
 class Inventory extends React.Component {
   render() {
+    const tableName = 'Inventario';
     const tableHeads = [
       { 
-        title: 'Nombre',
+        label: 'Nombre',
         isNumeric: false,
       },
       { 
-        title: 'SKU',
+        label: 'SKU',
         isNumeric: true, 
       },
       {
-        title: 'Disponible en deposito',
+        label: 'Disponible en deposito',
         isNumeric: true,
       },
       {
-        title: 'Pedidos',
+        label: 'Pedidos',
         isNumeric: true,
       },
 
@@ -28,7 +29,7 @@ class Inventory extends React.Component {
     const config = {
       className: 'ui-inventory',
       name: '',
-      content: <Table tableHeads={tableHeads} />,
+      content: <Table tableHeads={tableHeads} tableName={tableName} />,
     };
     return (
       <Section {...config} />
