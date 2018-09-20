@@ -6,7 +6,6 @@ import './Inventory.css';
 
 class Inventory extends React.Component {
   render() {
-    const tableName = 'Inventario';
     const tableHeads = [
       { 
         label: 'Nombre',
@@ -29,7 +28,7 @@ class Inventory extends React.Component {
     const config = {
       className: 'ui-inventory',
       name: '',
-      content: <Table tableHeads={tableHeads} tableName={tableName} />,
+      content: <Table tableHeads={tableHeads} />,
     };
     return (
       <Section {...config} />
