@@ -8,9 +8,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+// Util sorting functions.
+import { stableSort, getSorting } from './sorting/sorting';
+
+
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#2196f3',
     color: theme.palette.common.white,
   },
   body: {
@@ -49,18 +53,18 @@ const rows = [
 ];
 
 function CustomizedTable(props) {
-  const { classes } = props;
+  const { classes, tableHeads } = props;
 
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <CustomTableCell>Dessert (100g serving)</CustomTableCell>
-            <CustomTableCell numeric>Calories</CustomTableCell>
-            <CustomTableCell numeric>Fat (g)</CustomTableCell>
-            <CustomTableCell numeric>Carbs (g)</CustomTableCell>
-            <CustomTableCell numeric>Protein (g)</CustomTableCell>
+            {tableHeads.map((head, index) => {
+              return (
+                <CustomTableCell numeric={head.isNumeric} key={index}>{head.title}</CustomTableCell>
+              );
+            })}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -73,7 +77,6 @@ function CustomizedTable(props) {
                 <CustomTableCell numeric>{row.calories}</CustomTableCell>
                 <CustomTableCell numeric>{row.fat}</CustomTableCell>
                 <CustomTableCell numeric>{row.carbs}</CustomTableCell>
-                <CustomTableCell numeric>{row.protein}</CustomTableCell>
               </TableRow>
             );
           })}

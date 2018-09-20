@@ -2,9 +2,6 @@ import React from 'react';
 import './Section.css';
 
 class Section extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return(
       <div className={this.props.className}>
