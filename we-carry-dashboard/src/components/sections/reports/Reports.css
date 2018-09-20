@@ -1,0 +1,10 @@
+.reports {
+    width: 100%;
+    height: 100%;
+  }
+  
+ .reports h2 {
+  text-align: left;
+  margin-left: 24px;
+  padding: 24px 0 24px;
+}

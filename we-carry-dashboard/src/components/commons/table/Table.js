@@ -56,7 +56,7 @@ const rows = [
 ];
 
 function CustomizedTable(props) {
-  const { classes, tableHeads, tableName } = props;
+  const { classes, tableHeads, tableName, cols } = props;
 
   return (
    
@@ -82,6 +82,7 @@ function CustomizedTable(props) {
                 <CustomTableCell numeric>{row.calories}</CustomTableCell>
                 <CustomTableCell numeric>{row.fat}</CustomTableCell>
                 <CustomTableCell numeric>{row.carbs}</CustomTableCell>
+                {cols === 5 ? <CustomTableCell numeric>{row.protein}</CustomTableCell> : null}
               </TableRow>
             );
           })}
