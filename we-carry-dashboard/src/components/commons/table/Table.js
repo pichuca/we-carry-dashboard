@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 // Util sorting functions.
-import { stableSort, getSorting } from './sorting/sorting';
+// import { stableSort, getSorting } from './sorting/sorting';
 
 import './Table.css';
 
