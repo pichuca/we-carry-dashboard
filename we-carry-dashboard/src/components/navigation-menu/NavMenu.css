@@ -5,3 +5,7 @@
 .app-header {
     background-color: #2196f3 !important;
 }
+
+.menu-buttons a {
+    text-decoration: none;
+}
