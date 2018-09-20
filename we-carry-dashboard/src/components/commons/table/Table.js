@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Fraction } from 'fractional';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,6 +11,8 @@ import Paper from '@material-ui/core/Paper';
 
 // Util sorting functions.
 import { stableSort, getSorting } from './sorting/sorting';
+
+import './Table.css';
 
 
 const CustomTableCell = withStyles(theme => ({
@@ -45,19 +48,21 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Frozen yoghurt', 159, new Fraction(6, 7).toString(), 24, 4.0),
+  createData('Ice cream sandwich', 237, new Fraction(1, 32).toString(), 37, 4.3),
+  createData('Eclair', 262, 16.0, new Fraction(19, 24).toString(), 6.0),
+  createData('Cupcake', 305, 3.7, new Fraction(45, 66).toString(), 4.3),
+  createData('Gingerbread', 356, new Fraction(1, 14).toString(), 49, 3.9),
 ];
 
 function CustomizedTable(props) {
-  const { classes, tableHeads } = props;
+  const { classes, tableHeads, tableName } = props;
 
   return (
+   
     <Paper className={classes.root}>
-      <Table className={classes.table}>
+      <h2 className="ui-table-title">{tableName}</h2>
+      <Table className={classes.table}>       
         <TableHead>
           <TableRow>
             {tableHeads.map((head, index) => {
